@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace CretaceousPark.Controllers
+namespace CretaceousApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

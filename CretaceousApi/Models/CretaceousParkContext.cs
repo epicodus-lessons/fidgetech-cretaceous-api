@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace CretaceousPark.Models
+namespace CretaceousApi.Models
 {
-  public class CretaceousParkContext : DbContext
+  public class CretaceousApiContext : DbContext
   {
     public DbSet<Animal> Animals { get; set; }
 
-    public CretaceousParkContext(DbContextOptions<CretaceousParkContext> options)
+    public CretaceousApiContext(DbContextOptions<CretaceousApiContext> options)
       : base(options)
     {
     }

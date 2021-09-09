@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "CretaceousPark": {
+    "CretaceousApi": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
