@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CretaceousApi.Controllers
 {
@@ -17,16 +18,21 @@ namespace CretaceousApi.Controllers
             _db = db;
         }
 
+        private bool AnimalExists(int id)
+        {
+            return _db.Animals.Any(e => e.AnimalId == id);
+        }
+
         // GET api/animals
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Animal>>> Get()
+        public async Task<List<Animal>> Get()
         {
             return await _db.Animals.ToListAsync();
         }
 
         // POST api/animals
         [HttpPost]
-        public async Task<ActionResult<Animal>> Post(Animal animal)
+        public async Task<ActionResult> Post(Animal animal)
         {
             _db.Animals.Add(animal);
             await _db.SaveChangesAsync();
